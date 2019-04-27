@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootst.." integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.." rel="stylesheet" id="bootstrap-css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+       <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'ttest/css/tests.css' %}" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Привет, мир!</h1>
+    <!— Header —>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #71c2dc;">
+      <div class="ml-5">
+        <a class="navbar-brand" href="#">
+          <img src="img\Logo.png" width="90" height="27" alt=""><span class="sr-only">(current)</span></img>
+        </a>
+      </div>
+      <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!— Кнопки в Header —>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-3 ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="first" href="#">Курслар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link yth" href="#">Проект турында</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Экспертлар</a>
+          </li>
+        </ul>
+
+        <!— Форма поиска в Header —>
+        <form class="form-inline mr-5 my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Эзләү">
+          <button class="btn shadow-sm rounded btn-outline-success my-2 my-sm-0" id="signinbtn" type="submit">Керү</button>
+        </form>
+      </div>
+    </nav>
+
+    <h1 class="container d-flex justify-content-center tr">...темасы буенча тест нәтиҗәсе </h1>
+
+    <h3 class="container d-flex justify-content-center tr">15/20</h3>  
+
+    <div class="question">
+      <h5 class="container mt-5">1.Сам вопрос</h5>
+      <div class="mb-5 container">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked disabled="">
+          <label class="form-check-label" for="exampleRadios1">
+            Default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <label class="form-check-label" for="exampleRadios2">
+            Second default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <label class="form-check-label" for="exampleRadios2">
+            Third default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <label class="form-check-label" for="exampleRadios2">
+            Fourth default radio
+          </label>
+        </div>
+      </div>
+    </div> 
+    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
+      Это уведомление об успехе — check it out!
+    </div>
+
+
+    <div class="question">
+      <h5 class="container mt-5">2.Сам вопрос</h5>
+      <div class="mb-5 container">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios1" value="option1" disabled>
+          <label class="form-check-label" for="exampleRadios1">
+            Default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Second default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" checked disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Third default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Fourth default radio
+          </label>
+        </div>
+      </div>
+    </div> 
+    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
+      Это уведомление об успехе — check it out!
+    </div>
+
+    <div class="question">
+      <h5 class="container mt-5">3.Сам вопрос</h5>
+      <div class="mb-5 container">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" disabled>
+          <label class="form-check-label" for="exampleRadios1">
+            Default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Second default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Third default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" checked disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Fourth default radio
+          </label>
+        </div>
+      </div>
+    </div> 
+    <div class="alert alert-danger container" role="alert" style="width:600px;height:50px">
+      Это уведомление об ошибки — check it out! Правильный ответ:
+    </div>
+
+    <div class="question">
+      <h5 class="container mt-5">4.Сам вопрос</h5>
+      <div class="mb-5 container">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option1" disabled>
+          <label class="form-check-label" for="exampleRadios1">
+            Default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Second default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Third default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" checked disabled>
+          <label class="form-check-label" for="exampleRadios2">
+            Fourth default radio
+          </label>
+        </div>
+      </div>
+    </div> 
+    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
+      Это уведомление об успехе — check it out!
+    </div>
+
+    <div class="question">
+      <h5 class="container mt-5">5.Сам вопрос</h5>
+      <div class="mb-5 container">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+          <label class="form-check-label" for="defaultCheck1">
+           First default checkbox
+          </label>
+        </div>  
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked disabled>
+          <label class="form-check-label" for="defaultCheck1">
+            Second default checkbox
+          </label>
+        </div>  
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked disabled>
+          <label class="form-check-label" for="defaultCheck1">
+            Thirddefault checkbox
+          </label>
+        </div>  
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+          <label class="form-check-label" for="defaultCheck1">
+            Fourth default checkbox
+          </label>
+        </div>  
+      </div>
+    </div>
+    <div class="alert alert-danger container" role="alert" style="width:600px;height:50px">
+      Это уведомление об ошибки — check it out! Правильный ответ: 
+    </div>
+
+
+    <div>
+      <button type="button" class="shadow btn btn-primary container mt-5 d-flex justify-content-center btn-lg mb-5" style="width:300px;height:60px">Киләсе модуль</button>
+    </div>
+
+
+
+    <!— Footer —>
+    <section id="footer">
+      <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+          <div class="col-xs-12 col-sm-4 col-md-4" href="#">
+            <img src="img/Logo.png" width="245" height="70" alt=""><span class="sr-only">(current)</span></img>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h5>Ссылки на разделы:</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Контакты</a></li>
+              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Организация</a></li>
+              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Лицензия</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h5>Партнеры:</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Татнефть</a></li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+              <ul class="list-unstyled list-inline social text-center">
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-vk"></i> <img src="img\768px-VK_com-logo_svg.png" width="30" height="30"></a></li>
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-inst"></i><img src="img\md_5b321ca31d522.png" width="33" height="33"></a></li>
+                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i><img src="img\Facebook_logo_square.png" width="28" height="28"></a></li>
+                <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
