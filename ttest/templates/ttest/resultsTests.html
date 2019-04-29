@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Тест результаты</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootst.." integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.." rel="stylesheet" id="bootstrap-css">
     <!-- Bootstrap -->
@@ -24,37 +24,7 @@
   <body>
     <h1>Привет, мир!</h1>
     <!— Header —>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #71c2dc;">
-      <div class="ml-5">
-        <a class="navbar-brand" href="#">
-          <img src="img\Logo.png" width="90" height="27" alt=""><span class="sr-only">(current)</span></img>
-        </a>
-      </div>
-      <button class="navbar-toggler mr-5" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!— Кнопки в Header —>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-3 ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" id="first" href="#">Курслар</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link yth" href="#">Проект турында</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Экспертлар</a>
-          </li>
-        </ul>
-
-        <!— Форма поиска в Header —>
-        <form class="form-inline mr-5 my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Эзләү">
-          <button class="btn shadow-sm rounded btn-outline-success my-2 my-sm-0" id="signinbtn" type="submit">Керү</button>
-        </form>
-      </div>
-    </nav>
+    {% include 'includes/header.html' %}
 
     <h1 class="container d-flex justify-content-center tr">...темасы буенча тест нәтиҗәсе </h1>
 
@@ -234,39 +204,7 @@
 
 
     <!— Footer —>
-    <section id="footer">
-      <div class="container">
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-          <div class="col-xs-12 col-sm-4 col-md-4" href="#">
-            <img src="img/Logo.png" width="245" height="70" alt=""><span class="sr-only">(current)</span></img>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-4">
-            <h5>Ссылки на разделы:</h5>
-            <ul class="list-unstyled quick-links">
-              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Контакты</a></li>
-              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Организация</a></li>
-              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Лицензия</a></li>
-            </ul>
-          </div>
-
-          <div class="col-xs-12 col-sm-4 col-md-4">
-            <h5>Партнеры:</h5>
-            <ul class="list-unstyled quick-links">
-              <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Татнефть</a></li>
-            </ul>
-          </div>
-
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-              <ul class="list-unstyled list-inline social text-center">
-                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-vk"></i> <img src="img\768px-VK_com-logo_svg.png" width="30" height="30"></a></li>
-                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-inst"></i><img src="img\md_5b321ca31d522.png" width="33" height="33"></a></li>
-                <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i><img src="img\Facebook_logo_square.png" width="28" height="28"></a></li>
-                <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-              </ul>
-            </div>
-          </div>
+    {% include 'includes/footer.html' %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

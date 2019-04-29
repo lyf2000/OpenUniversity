@@ -56,10 +56,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'OpenUniversity.urls'
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,4 +128,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+]
+
+#Backends добавил Райнур
+AUTHENTICATION_BACKENDS = [
+    'signin_signup.backends.EmailBackend',
 ]
