@@ -21,18 +21,18 @@ class Course(models.Model):
 
 class Module(models.Model):
 	name = models.CharField(max_length=200)	
-	course = models.ForeignKey(Course, on_delete=models.CASCADE)
+	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
 
 
 class Lesson(models.Model):
 	name = models.CharField(max_length=150)
 	video_link = models.CharField(max_length=200)
 	description = models.CharField(max_length=500)
-	module = models.ForeignKey(Module, on_delete=models.CASCADE)
-	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
+	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
+	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='lessons')
 
 
 class Resource(models.Model):
 	name = models.CharField(max_length=150)
 	resource_link = models.CharField(max_length=250)
-	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='lessons')

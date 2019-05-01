@@ -9,7 +9,16 @@ def courses(request):
 
 def course(request, course_id):
     course = Course.objects.get(id=course_id)
-    return render(request, 'course_lesson/course.html')
+    modules = Module.objects.filter(course_id=course_id)
+    teachers = Teacher.objects.filter(lessons__module__course_id=course_id)
+    
+    args = {
+        'course': course,
+        'modules': modules,
+        'teachers': teachers,
+
+    }
+    return render(request, 'course_lesson/course.html', context=args)
 
 
 
