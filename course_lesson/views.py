@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+
+
 # Create your views here.
 
 
@@ -19,7 +21,6 @@ def course(request, course_id):
 
     }
     return render(request, 'course_lesson/course.html', context=args)
-
 
 
 def lesson(request, course_id, module_id, lesson_id):

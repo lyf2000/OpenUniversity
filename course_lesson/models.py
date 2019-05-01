@@ -28,20 +28,41 @@ class Module(models.Model):
 	name = models.CharField(max_length=200)	
 	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
 
+	previous_id = models.PositiveSmallIntegerField(blank=True,null=True)
+	next_id = models.PositiveSmallIntegerField(blank=True,null=True)
+
 	def __str__(self):
 		return f'{self.name} module from {self.course.name}'
 
 class Lesson(models.Model):
+
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.change_video_link()
+
 	name = models.CharField(max_length=150)
 	video_link = models.CharField(max_length=200)
 	description = models.CharField(max_length=500)
 	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
 	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='lessons')
-	
+
+	previous_id = models.PositiveSmallIntegerField(blank=True, null=True)
+	next_id = models.PositiveSmallIntegerField(blank=True, null=True)
+
+	def change_video_link(self):
+		link = self.video_link
+		if '=' in link:
+			link = link[link.index('=')+1:]
+			head = 'https://www.youtube.com/embed/'
+			self.video_link = head + link
+			self.save()
+
 	def __str__(self):
 		return f'{self.name} lesson from {self.module.name} module'
 
 class Resource(models.Model):
+
+
 	name = models.CharField(max_length=150)
 	resource_link = models.CharField(max_length=250)
 	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='resources')

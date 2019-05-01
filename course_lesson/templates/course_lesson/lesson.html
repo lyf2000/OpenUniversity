@@ -20,8 +20,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-
-            <img src="{{ lesson.video_link }}" class="img-fluid" alt="Видео">
+            <iframe width="560" height="315" src="{{ lesson.video_link }}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
 
         </div>
         <div class="col-md-4">
@@ -95,7 +96,14 @@
 
 
 <div class="container mt-5">
-    <button type="button" class="btn btn-primary btn-lg btn-block">Следующее видео</button>
+    {% if lesson.next_id %}
+        <a href="{% url 'course_lesson:lesson' lesson.module.course_id lesson.module_id lesson.next_id %}"
+           class="btn btn-primary btn-lg btn-block">Следующее видео</a>
+    {% else %}
+        <a href="{% url 'test:test' lesson.module.course_id lesson.module_id %}"
+           class="btn btn-primary btn-lg btn-block mb-5">Го тест</a>
+
+    {% endif %}
 </div>
 {% include 'includes/footer.html' %}
 </body>
