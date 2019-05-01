@@ -31,7 +31,9 @@
                     <h4 class="card-title">{{ module.name }}</h4>
                     <h5 class="card-title">Программа модуля</h5>
                     {% for lesson_in_module in module.lessons.all %}
-                        <p class="card-text">{{ lesson_in_module.name }}</p>
+                        <p class="card-text">
+                            <a href="{% url 'course_lesson:lesson' lesson_in_module.module.course.id lesson_in_module.module.id lesson_in_module.id %}">{{ lesson_in_module.name }}</a>
+                        </p>
                     {% endfor %}
                     <a href="{% url 'test:test' lesson.module.course.id lesson.module.id %}" class="btn btn-primary">Тест</a>
                 </div>
