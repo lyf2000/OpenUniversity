@@ -14,7 +14,7 @@ class Teacher(models.Model):
 class Course(models.Model):
 	name = models.CharField(max_length=200)	
 	description = models.CharField(max_length=800)
-#нагрузка???
+	complexity = models.PositiveSmallIntegerField(default=0)
 	language = models.CharField(max_length=50)
 	video_link = models.CharField(max_length=200)
 
