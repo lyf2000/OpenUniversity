@@ -27,8 +27,4 @@ urlpatterns = [
     path('', include('user_profile.urls', namespace='user_profile')),
     
 ]
-#urlpatterns = [
-#    path('admin/', admin.site.urls),
-#    path('', include('signin_signup.urls')),
-#    path('test/', include('ttest.urls')),
-#]
+

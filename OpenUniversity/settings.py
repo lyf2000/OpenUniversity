@@ -132,6 +132,6 @@ STATICFILES_DIRS = [
 ]
 
 #Backends добавил Райнур
-AUTHENTICATION_BACKENDS = [
-    'signin_signup.backends.EmailBackend',
-]
+# AUTHENTICATION_BACKENDS = [
+#     'signin_signup.backends.EmailBackend',
+# ]

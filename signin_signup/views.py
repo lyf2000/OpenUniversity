@@ -9,17 +9,13 @@ from django.template.context_processors import csrf
 
 
 def sign_in(request):
-    pass
+    return render(request, 'signin_signup/sign_in.html')
 
 
 def sign_up(request):
     pass
 
-# def index (request):
-#     return render(request, 'signin_signup/index.html')
 
-# def login (request):
-#     return render(request, 'signin_signup/login.html')
 
 # def login1(request):
 # 	if request.user.is_authenticated:
@@ -36,11 +32,8 @@ def sign_up(request):
 # 				return HttpResponseRedirect(reverse('check'))
 # 			else:
 # 				args['login_error'] = "User is not found"
-# 				return render_to_response('signin_signup/login.html', args)
+# 				return render_to_response('signin_signup/sign_in.html', args)
 # 		else:
-# 			return render_to_response('signin_signup/login.html', args)
+# 			return render_to_response('signin_signup/sign_in.html', args)
 
-# def check(request):
-# 	user = request.user
-# 	return render('signin_signup/check.html', {'user':user})
 

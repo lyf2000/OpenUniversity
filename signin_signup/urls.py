@@ -11,9 +11,5 @@ urlpatterns = [
 ]
 
 
-# urlpatterns = [
-#     path('', views.index, name='index'),
-#     path('login/', views.login1, name='login'),
-#     path('check/', views.check, name='check')
-# ]
+
 
