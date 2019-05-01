@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Тест результаты</title>
+    <title>Bootstrap 101 Template</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootst.." integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.." rel="stylesheet" id="bootstrap-css">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-       <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'ttest/css/tests.css' %}" rel="stylesheet">
-
+     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'ttest/css/test.css' %}" rel="stylesheet">
+    <link href="{% static 'css/includes/footer.css' %}" type="text/css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,179 +25,161 @@
     <!— Header —>
     {% include 'includes/header.html' %}
 
-    <h1 class="container d-flex justify-content-center tr">...темасы буенча тест нәтиҗәсе </h1>
 
-    <h3 class="container d-flex justify-content-center tr">15/20</h3>
-
+    <h1 class="container d-flex justify-content-center tr">Тест по теме</h1>
     <div class="question">
       <h5 class="container mt-5">1.Сам вопрос</h5>
       <div class="mb-5 container">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked disabled="">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
           <label class="form-check-label" for="exampleRadios1">
             Default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Second default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Third default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" disabled="">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Fourth default radio
           </label>
         </div>
       </div>
     </div>
-    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
-      Это уведомление об успехе — check it out!
-    </div>
-
 
     <div class="question">
       <h5 class="container mt-5">2.Сам вопрос</h5>
       <div class="mb-5 container">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios1" value="option1" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios1" value="option1" checked>
           <label class="form-check-label" for="exampleRadios1">
             Default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Second default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" checked disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Third default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Fourth default radio
           </label>
         </div>
       </div>
-    </div>
-    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
-      Это уведомление об успехе — check it out!
     </div>
 
     <div class="question">
       <h5 class="container mt-5">3.Сам вопрос</h5>
       <div class="mb-5 container">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios1" value="option1" checked>
           <label class="form-check-label" for="exampleRadios1">
             Default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Second default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Third default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2" checked disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Fourth default radio
           </label>
         </div>
       </div>
-    </div>
-    <div class="alert alert-danger container" role="alert" style="width:600px;height:50px">
-      Это уведомление об ошибки — check it out! Правильный ответ:
     </div>
 
     <div class="question">
       <h5 class="container mt-5">4.Сам вопрос</h5>
       <div class="mb-5 container">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option1" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios1" value="option1" checked>
           <label class="form-check-label" for="exampleRadios1">
             Default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Second default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Third default radio
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2" checked disabled>
+          <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios2" value="option2">
           <label class="form-check-label" for="exampleRadios2">
             Fourth default radio
           </label>
         </div>
       </div>
     </div>
-    <div class="alert alert-success container" role="alert" style="width:600px;height:50px">
-      Это уведомление об успехе — check it out!
-    </div>
 
     <div class="question">
       <h5 class="container mt-5">5.Сам вопрос</h5>
       <div class="mb-5 container">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
            First default checkbox
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked disabled>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
             Second default checkbox
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked disabled>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
             Thirddefault checkbox
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">
             Fourth default checkbox
           </label>
         </div>
       </div>
     </div>
-    <div class="alert alert-danger container" role="alert" style="width:600px;height:50px">
-      Это уведомление об ошибки — check it out! Правильный ответ:
-    </div>
 
 
     <div>
-      <button type="button" class="shadow btn btn-primary container mt-5 d-flex justify-content-center btn-lg mb-5" style="width:300px;height:60px">Киләсе модуль</button>
+      <button type="button" class="shadow btn btn-primary container mt-5 d-flex justify-content-center btn-lg mb-5" style="width:300px;height:60px">Алга</button>
     </div>
 
 
