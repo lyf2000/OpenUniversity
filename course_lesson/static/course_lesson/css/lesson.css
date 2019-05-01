@@ -1,0 +1,30 @@
+
+.btn-outline-success {
+color: #075e7b;
+border-color: #075e7b;
+}
+
+.btn-outline-success:hover {
+color: #fff;
+background-color: #146985;
+border-color: #146985;
+}
+
+.btn-outline-success:focus, .btn-outline-success.focus {
+box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btn-outline-success.disabled, .btn-outline-success:disabled {
+color: #146985;
+background-color: transparent;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
+.show > .btn-outline-success.dropdown-toggle {
+color: #fff;
+background-color: #146985;
+border-color: #146985;
+}
+h2{
+	color:red;
+}

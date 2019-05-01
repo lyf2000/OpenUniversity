@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('signin_signup.urls', namespace='signin_signup')),
     path('', include('pages.urls', namespace='pages')),
     path('', include('user_profile.urls', namespace='user_profile')),
+    
+]
 
 ]
 #urlpatterns = [
