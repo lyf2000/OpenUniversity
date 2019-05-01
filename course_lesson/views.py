@@ -12,7 +12,7 @@ def course(request, course_id):
 
 
 def lesson(request, course_id, module_id, lesson_id):
-    pass
+    return render(request, 'course_lesson/lesson.html')
 
 
 def course_end(request, course_id):
