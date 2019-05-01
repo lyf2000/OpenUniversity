@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#dadasdasds
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,8 +27,6 @@ urlpatterns = [
     path('', include('user_profile.urls', namespace='user_profile')),
     
 ]
-
-
 #urlpatterns = [
 #    path('admin/', admin.site.urls),
 #    path('', include('signin_signup.urls')),

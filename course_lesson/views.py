@@ -4,11 +4,12 @@ from .models import *
 
 
 def courses(request):
-    pass
+    return render(request, 'course_lesson/courses.html')
 
 
 def course(request, course_id):
     course = Course.objects.get(id=course_id)
+    return render(request, 'course_lesson/course.html')
 
 
 
@@ -29,6 +30,6 @@ def lesson(request, course_id, module_id, lesson_id):
 
 
 def course_end(request, course_id):
-    pass
+    return render(request, 'course_lesson/course_end.html')
 
 

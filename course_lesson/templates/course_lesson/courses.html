@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+    <link href="{% static 'course_lesson/css/lesson.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/includes/footer.css' %}" type="text/css" rel="stylesheet">
+
+    <title>Ачык университет</title>
+</head>
+<body style="background-color:white">
+{% include 'includes/header.html' %}
+<div class="mt-5"><h1>Страница всех курсов </h1></div>
+
+{% include 'includes/footer.html' %}
+</body>
+</html>
