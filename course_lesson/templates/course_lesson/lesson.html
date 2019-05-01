@@ -21,19 +21,18 @@
     <div class="row">
         <div class="col-md-8">
 
-            <img src="{% static 'course_lesson/img/tatpo.jpg' %}" class="img-fluid" alt="Видео">
+            <img src="{{ lesson.video_link }}" class="img-fluid" alt="Видео">
 
         </div>
         <div class="col-md-4">
             <div class="card">
                 <div style="background-color:#a3f1f7" class="card-body">
-                    <h4 class="card-title">Название модуля</h4>
-                    <h5 class="card-title">(программа модуля)</h5>
-                    <p class="card-text">1.Начало</p>
-                    <p class="card-text">2.Почти</p>
-                    <p class="card-text">3.Кульминация</p>
-                    <p class="card-text">4.Концовка</p>
-                    <a href="#" class="btn btn-primary">Тест</a>
+                    <h4 class="card-title">{{ module.name }}</h4>
+                    <h5 class="card-title">Программа модуля</h5>
+                    {% for lesson_in_module in module.lessons.all %}
+                        <p class="card-text">{{ lesson_in_module.name }}</p>
+                    {% endfor %}
+                    <a href="{% url 'test:test' lesson.module.course.id lesson.module.id %}" class="btn btn-primary">Тест</a>
                 </div>
             </div>
         </div>
@@ -48,8 +47,7 @@
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-                <p>Данный урок является итоговым, на котором применяются и оцениваются знания и умения, полученные
-                    ранее, степень владения учебным материалом и понимание</p>
+                <p>{{ lesson.description }}</p>
             </blockquote>
         </div>
     </div>
@@ -67,8 +65,10 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="card-title">Преподователь</h4>
-                        <p class="card-text">Препод КФУ</p>
+                        <h4 class="card-title">{{ lesson.teacher.first_name }} {{ lesson.teacher.last_name }}</h4>
+                        {#                        КРАТКОЕ ОПИСАНИЕ ПРЕПОДАААА!!!!#}
+                        <p class="card-text">{{ lesson.teacher.information }}</p>
+                        {#                        NOT ACTIVE#}
                         <a href="#" class="btn btn-primary">Больше про препода</a>
                     </div>
                 </div>
@@ -80,35 +80,15 @@
 <div class="container mt-5">
     <div class="col-md-12">
         <div class="card-deck">
-            <div class="card">
-                <img src="{% static 'course_lesson/img/wiki.png' %}" class="card-img-top" alt="wiki">
-                <div class="card-body">
-                    <h5 class="card-title">Википедия</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
+            {% for resource in resources %}
+                <div class="card">
+                    <img src="{% static 'course_lesson/img/wiki.png' %}" class="card-img-top" alt="wiki">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ resource.name }}</h5>
+                    </div>
                 </div>
+            {% endfor %}
 
-
-            </div>
-            <div class="card">
-                <img src="{% static 'course_lesson/img/boy.png' %}" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Название карточки</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                </div>
-
-
-            </div>
-            <div class="card">
-                <img src={% static 'course_lesson/img/tatpo.jpg' %} class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Название карточки</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>

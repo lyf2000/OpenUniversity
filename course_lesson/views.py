@@ -11,7 +11,7 @@ def course(request, course_id):
     course = Course.objects.get(id=course_id)
     modules = Module.objects.filter(course_id=course_id)
     teachers = Teacher.objects.filter(lessons__module__course_id=course_id)
-    
+
     args = {
         'course': course,
         'modules': modules,
