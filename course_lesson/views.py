@@ -4,11 +4,11 @@ from django.shortcuts import render
 
 
 def courses(request):
-    pass
+    return render(request, 'course_lesson/courses.html')
 
 
 def course(request, course_id):
-    pass
+    return render(request, 'course_lesson/course.html')
 
 
 def lesson(request, course_id, module_id, lesson_id):
@@ -16,6 +16,6 @@ def lesson(request, course_id, module_id, lesson_id):
 
 
 def course_end(request, course_id):
-    pass
+    return render(request, 'course_lesson/course_end.html')
 
 
