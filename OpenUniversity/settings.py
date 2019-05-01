@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',
     'comment.apps.CommentConfig',
     'course_lesson.apps.CourseLessonConfig',
     'signin_signup.apps.SigninSignupConfig',
