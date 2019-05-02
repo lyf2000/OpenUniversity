@@ -27,18 +27,19 @@
 {% include 'includes/header.html' %}
 
 <div class="container margin_for_banner">
-		<div class="row">
-			<div class="img-wrap d-flex justify-content-center">
-				<img class="" src="{% static 'course_lesson/img/trolley.jpg' %}" style="width:147.45%; height:100%;">
-				<h1  class="container mb-3" style="color: #ffffff">Название курса</h1>
-				<!-- <h1  class="container text-right" style="color: #ffffff">Кнопка</h1> -->
-				<div class="text-right container urod">
-					<button type="button" class="shadow-sm rounded btn btn-primarynew mt-5 btn-lg mb-3" style="width:200px;height:50px;">След. страница</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
+    <div class="row">
+        <div class="img-wrap d-flex justify-content-center">
+            <img class="" src="{% static 'course_lesson/img/trolley.jpg' %}" style="width:147.45%; height:100%;">
+            <h1 class="container mb-3" style="color: #ffffff">Название курса</h1>
+            <!-- <h1  class="container text-right" style="color: #ffffff">Кнопка</h1> -->
+            <div class="text-right container urod">
+                <button type="button" class="shadow-sm rounded btn btn-primarynew mt-5 btn-lg mb-3"
+                        style="width:200px;height:50px;">След. страница
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="container">
@@ -72,7 +73,7 @@
                         <h4 class="card-title">{{ module.queue_number }} Модуль</h4>
                         <ul class="card-title">
                             {% for lesson_in_module in module.lessons.all %}
-                                <a href="{% url 'course_lesson:lesson' course.queue_number module.queue_number lesson_in_module.queue_number    %}">
+                                <a href="{% url 'course_lesson:lesson' course.queue_number module.queue_number lesson_in_module.queue_number %}">
                                     <li>
                                         <p class="card-text">{{ lesson_in_module.name }}</p>
                                     </li>
@@ -87,130 +88,119 @@
 
 </div>
 
-	<div class="d-flex justify-content-center" style="margin-top: 100px; color: #4191ab;">
-		<h1>Преподователи</h1>
-	</div>
+<div class="d-flex justify-content-center" style="margin-top: 100px; color: #4191ab;">
+    <h1>Преподователи</h1>
+</div>
+{% for teacher in teachers %}
+    <div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
+        <div class="row no-gutters d-flex justify-content-center">
+            <div class="mt-4">
+                <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"
+                     class=" rounded-circle" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">ФИО (данное поле включает в себя максимум 150 символов)</h5>
+                    <p class="card-text">очень краткая информация о нем(доктор,доцент и т.д.) (макс 300 символов)</p>
+                    <p class="card-text">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">ФИО (данное поле включает в себя максимум 150 символов)</h5>
-					<p class="card-text">очень краткая информация о нем(доктор,доцент и т.д.) (макс 300 символов)</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">ФИО (данное поле включает в себя максимум 150 символов)</h5>
-					<p class="card-text">очень краткая информация о нем(доктор,доцент и т.д.) (макс 300 символов)</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">ФИО (данное поле включает в себя максимум 150 символов)</h5>
-					<p class="card-text">очень краткая информация о нем(доктор,доцент и т.д.) (макс 300 символов)</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<!-- Отзывы -->
-	<div class="d-flex justify-content-center" style="margin-top: 100px; color: #4191ab;">
-		<h1>Отзывлар</h1>
-	</div>
-
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">Название карточки</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">Название карточки</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">Название карточки</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
-		<div class="row no-gutters d-flex justify-content-center">
-			<div class="mt-4">
-				<img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40" class=" rounded-circle"  alt="...">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title">Название карточки</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
+{##}
+{#<!-- Отзывы -->#}
+{#<div class="d-flex justify-content-center" style="margin-top: 100px; color: #4191ab;">#}
+{#    <h1>Отзывлар</h1>#}
+{#</div>#}
+{##}
+{##}
+{#<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">#}
+{#    <div class="row no-gutters d-flex justify-content-center">#}
+{#        <div class="mt-4">#}
+{#            <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"#}
+{#                 class=" rounded-circle" alt="...">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <div class="card-body">#}
+{#                <h5 class="card-title">Название карточки</h5>#}
+{#                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional#}
+{#                    content. This content is a little bit longer.</p>#}
+{#                <p class="card-text">#}
+{#                    <small class="text-muted">Last updated 3 mins ago</small>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">#}
+{#    <div class="row no-gutters d-flex justify-content-center">#}
+{#        <div class="mt-4">#}
+{#            <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"#}
+{#                 class=" rounded-circle" alt="...">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <div class="card-body">#}
+{#                <h5 class="card-title">Название карточки</h5>#}
+{#                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional#}
+{#                    content. This content is a little bit longer.</p>#}
+{#                <p class="card-text">#}
+{#                    <small class="text-muted">Last updated 3 mins ago</small>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">#}
+{#    <div class="row no-gutters d-flex justify-content-center">#}
+{#        <div class="mt-4">#}
+{#            <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"#}
+{#                 class=" rounded-circle" alt="...">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <div class="card-body">#}
+{#                <h5 class="card-title">Название карточки</h5>#}
+{#                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional#}
+{#                    content. This content is a little bit longer.</p>#}
+{#                <p class="card-text">#}
+{#                    <small class="text-muted">Last updated 3 mins ago</small>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">#}
+{#    <div class="row no-gutters d-flex justify-content-center">#}
+{#        <div class="mt-4">#}
+{#            <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"#}
+{#                 class=" rounded-circle" alt="...">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <div class="card-body">#}
+{#                <h5 class="card-title">Название карточки</h5>#}
+{#                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional#}
+{#                    content. This content is a little bit longer.</p>#}
+{#                <p class="card-text">#}
+{#                    <small class="text-muted">Last updated 3 mins ago</small>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
 
 
-	<div>
-		<button type="button" class="shadow btn btn-primary container mt-5 d-flex justify-content-center btn-lg mb-5" style="width:430px;height:80px">Башлыйбыз</button>
-	</div>
-
-
-
+<div>
+    <button type="button" class="shadow btn btn-primary container mt-5 d-flex justify-content-center btn-lg mb-5"
+            style="width:430px;height:80px">Башлыйбыз
+    </button>
+</div>
 
 
 {% include 'includes/footer.html' %}
