@@ -10,7 +10,7 @@ input::-webkit-input-placeholder {
  font-size: 11px;
  padding-top: 3px;
 }
-.form-control {
+.signup-form {
  height: auto!important;
 padding: 8px 12px !important;
 border-top-right-radius: 40px!important;
