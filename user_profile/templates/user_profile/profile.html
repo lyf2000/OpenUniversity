@@ -16,13 +16,6 @@
 <body style="background-color:white">
 {% include 'includes/header.html' %}
 <div class="mt-5"><h1>Профиль </h1></div>
-<div class="mt-5"><h4><strong>Имя: </strong> {{ user.first_name }} </h4></div>
-<div class="mt-5"><h4><strong>Фамилия: </strong> {{ user.last_name }} </h4></div>
-<div class="mt-5"><h4><strong>E-mail: </strong> {{ user.email }} </h4></div>
-<div class="mt-5"><h4><strong>Username: </strong> {{ user.username }} </h4></div>
-<div class="mt-5"><h4><a href="{% url 'signin_signup:logout' %}">Выйти</a></h4></div>
-
-
 
 {% include 'includes/footer.html' %}
 </body>
