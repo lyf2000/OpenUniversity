@@ -33,6 +33,7 @@ def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse("pages:index"))
 
+
 # def login1(request):
 # 	if request.user.is_authenticated:
 # 		return render(request, 'signin_signup/check.html')
