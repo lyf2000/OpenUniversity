@@ -35,7 +35,7 @@
                     {% endfor %}
                     <div class="d-flex justify-content-center">
                         <button href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number %}"
-                                class="btn btn-primary" style="width: 100px">Тест
+                                class="btn btn-primary shadow-sm" style="width: 100px">Тест
                         </button>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     {#                        КРАТКОЕ ОПИСАНИЕ ПРЕПОДАААА!!!!#}
                     <p class="card-text">{{ lesson.teacher.information }}</p>
                     {#                        NOT ACTIVE#}
-                    <a href="#" class="btn btn-primary">Больше про препода</a>
+                    <a href="#" class="btn btn-primary shadow-sm">Больше про препода</a>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
            style="width:300px;height:50px">Следующее видео</a>
     {% else %}
         <a href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number %}"
-           class="btn btn-primary btn-lg btn-block mb-5">Го тест</a>
+           class="shadow btn btn-primary container btn-lg d-flex justify-content-center" style="width:300px;height:50px">Начать тест</a>
 
     {% endif %}
 </div>
