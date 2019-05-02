@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def test(request, course_id, module_id):
+def test(request, course_queue, module_queue):
     return render(request, 'ttest/test.html')
 
 def test_result(request, course_id, module_id):

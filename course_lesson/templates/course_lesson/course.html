@@ -95,16 +95,13 @@
     <div class="mb-3 container mt-5 d-flex justify-content-center" style="max-width: 985px;">
         <div class="row no-gutters d-flex justify-content-center">
             <div class="mt-4">
-                <img src="{% static 'course_lesson/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="40" height="40"
+                <img src="{{ teacher.image.url }}" width="40" height="40"
                      class=" rounded-circle" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">ФИО (данное поле включает в себя максимум 150 символов)</h5>
-                    <p class="card-text">очень краткая информация о нем(доктор,доцент и т.д.) (макс 300 символов)</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
+                    <h5 class="card-title">{{ teacher.first_name }} {{ teacher.last_name }} {{ teacher.patronymic }}</h5>
+                    <p class="card-text">(краткая информация)[In next release]</p>
                 </div>
             </div>
         </div>

@@ -14,17 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from . import settings
+from django.contrib.staticfiles.urls import static
 from django.urls import path, include
 
 #dadasdasds
+from OpenUniversity import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('course_lesson.urls', namespace='course_lesson')),
-    path('course/<int:course_id>/module/<int:module_id>/', include('ttest.urls', namespace='ttest')),
+    path('course/<int:course_queue>/module/<int:module_queue>/', include('ttest.urls', namespace='ttest')),
     path('', include('signin_signup.urls', namespace='signin_signup')),
     path('', include('pages.urls', namespace='pages')),
     path('', include('user_profile.urls', namespace='user_profile')),
     
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

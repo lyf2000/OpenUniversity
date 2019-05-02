@@ -21,6 +21,7 @@ def course(request, course_queue):
         course = Course.objects.get(queue_number=course_queue)
         modules = Module.objects.filter(course_id=course.id).order_by('queue_number')
         teachers = Teacher.objects.filter(lessons__module__course_id=course.id)
+        teachers = set(teachers)
 
         args = {
             'course': course,
