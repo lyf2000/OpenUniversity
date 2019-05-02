@@ -28,9 +28,29 @@
 	                <input class="form-control mr-sm-2" type="search" placeholder="Эзләү">
 	             </form>
             </li>
+            {% if request.user.is_authenticated %}
             <li class="nav-item mr-5">
+
+            <!-- Example single danger button -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ request.user.first_name }}
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'user_profile:profile'%}">Личный кабинет</a>
+                    <a class="dropdown-item" href="#">Настройки профиля</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'signin_signup:logout' %}">Выйти</a>
+                  </div>
+                </div>
+            </li>
+            {% else %}
+             <li class="nav-item mr-5">
+
              <a href="{% url 'signin_signup:sign_in' %}"><button class="btn shadow-sm rounded btn-outline-success my-2 my-sm-0" id="signinbtn" type="submit">Керү</button></a>
             </li>
+
+            {% endif %}
 	    </ul>
 
 

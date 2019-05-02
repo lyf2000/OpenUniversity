@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from course_lesson.models import  *
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'pages/index.html')
+    courses = Course.objects.all()
+    return render(request, 'pages/index.html', {'courses':courses})
 
 
 
