@@ -13,7 +13,6 @@ def sign_in(request):
 
 
 def sign_up(request):
-
     args = {}
     args.update(csrf(request))
     args['form'] = RegistrationForm()
@@ -32,6 +31,7 @@ def sign_up(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse("pages:index"))
+
 
 # def login1(request):
 # 	if request.user.is_authenticated:
