@@ -25,12 +25,12 @@ class LoginForm (forms.Form):
         return username
 
 class RegistrationForm(UserCreationForm):
-    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter username"}))
-    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter email"}))
-    first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter name"}))
-    last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter lastname"}))
-    password1 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter password", 'type':"password" }))
-    password2 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Enter password again", 'type':"password" }))
+    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваш username"}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваш email"}))
+    first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваше имя"}))
+    last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите фамилию"}))
+    password1 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите пароль", 'type':"password" }))
+    password2 = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите пароль заново", 'type':"password" }))
 
     class Meta:
         model = User
@@ -51,3 +51,18 @@ class RegistrationForm(UserCreationForm):
 
         if commit:
             user.save()
+
+
+    def clean_password2(self):
+        if 'password1' in self.cleaned_data:
+            password1 = self.cleaned_data['password1']
+            password2 = self.cleaned_data['password2']
+            if password1 == password2:
+                if len(password2)<8:
+                    raise forms.ValidationError('Пароль должен содержать минимум 8 символов')
+                elif password2.isdigit()
+                else :
+                    return password2
+
+
+        raise forms.ValidationError('Пароли не совпадают')
