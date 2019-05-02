@@ -15,7 +15,9 @@ class Teacher(models.Model):
 
 
 class Course(models.Model):
-	name = models.CharField(max_length=200)	
+	queue_number = models.PositiveSmallIntegerField(default=0)
+
+	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=800)
 	complexity = models.PositiveSmallIntegerField(default=0)
 	language = models.CharField(max_length=50)
@@ -24,21 +26,19 @@ class Course(models.Model):
 	def __str__(self):
 		return f'{self.name}'
 
-class Module(models.Model):
-	name = models.CharField(max_length=200)	
-	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
 
-	previous_id = models.PositiveSmallIntegerField(blank=True,null=True)
-	next_id = models.PositiveSmallIntegerField(blank=True,null=True)
+class Module(models.Model):
+	queue_number = models.PositiveSmallIntegerField(default=0)
+
+	name = models.CharField(max_length=200)
+	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
 
 	def __str__(self):
 		return f'{self.name} module from {self.course.name}'
 
-class Lesson(models.Model):
 
-	def __init__(self, *args, **kwargs):
-		super().__init__(*args, **kwargs)
-		self.change_video_link()
+class Lesson(models.Model):
+	queue_number = models.PositiveSmallIntegerField(default=0)
 
 	name = models.CharField(max_length=150)
 	video_link = models.CharField(max_length=200)
@@ -46,8 +46,6 @@ class Lesson(models.Model):
 	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
 	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='lessons')
 
-	previous_id = models.PositiveSmallIntegerField(blank=True, null=True)
-	next_id = models.PositiveSmallIntegerField(blank=True, null=True)
 
 	def change_video_link(self):
 		link = self.video_link

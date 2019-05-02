@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
     <link href="{% static 'course_lesson/css/lesson.css' %}" type="text/css" rel="stylesheet">
@@ -30,12 +29,12 @@
                 <div style="background-color:#a3f1f7" class="card-body">
                     <h4 class="card-title">{{ module.name }}</h4>
                     <h5 class="card-title">Программа модуля</h5>
-                    {% for lesson_in_module in module.lessons.all %}
+                    {% for lesson_from_module in lessons_from_module %}
                         <p class="card-text">
-                            <a href="{% url 'course_lesson:lesson' lesson_in_module.module.course.id lesson_in_module.module.id lesson_in_module.id %}">{{ lesson_in_module.name }}</a>
+                            <a href="{% url 'course_lesson:lesson' lesson_from_module.module.course.queue_number lesson_from_module.module.queue_number  lesson_from_module.queue_number%}">{{ lesson_from_module.name }}</a>
                         </p>
                     {% endfor %}
-                    <a href="{% url 'test:test' lesson.module.course.id lesson.module.id %}" class="btn btn-primary">Тест</a>
+                    <a href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number %}" class="btn btn-primary">Тест</a>
                 </div>
             </div>
         </div>
@@ -98,11 +97,11 @@
 
 
 <div class="container mt-5">
-    {% if lesson.next_id %}
-        <a href="{% url 'course_lesson:lesson' lesson.module.course_id lesson.module_id lesson.next_id %}"
+    {% if next_lesson %}
+        <a href="{% url 'course_lesson:lesson' lesson.module.course.queue_number lesson.module.queue_number next_lesson.queue_number %}"
            class="btn btn-primary btn-lg btn-block">Следующее видео</a>
     {% else %}
-        <a href="{% url 'test:test' lesson.module.course_id lesson.module_id %}"
+        <a href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number%}"
            class="btn btn-primary btn-lg btn-block mb-5">Го тест</a>
 
     {% endif %}
