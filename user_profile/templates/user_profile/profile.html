@@ -18,20 +18,20 @@
 {% include 'includes/header.html' %}
 
 <div class="container mb-5">
-	<div class="" style="margin-top: 200px">
-		<h1 class="">Username</h1>
+	<div class="" style="margin-top: 100px">
+		<h1 class="d-flex justify-content-center mb-5">Личный кабинет</h1>
 	</div>
 	<div class="row ">
 		<div class="col">
-			<img class="" src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="100" height="100">
+			<img class="" src="{% static 'user_profile/img/minnikhanov.jpg' %}" width="300" height="300">
 		</div>
 		<div class="col">
-			<h4 class="d-flex justify-content-center">Имя</h4>
-			<p class="d-flex justify-content-center">Вася</p>
+			<h4 class="d-flex justify-content-center">Имя: </h4>
+			<p class="d-flex justify-content-center">{{ user.first_name }}</p>
 		</div>
 		<div class="col">
 			<h4 class="d-flex justify-content-center">Фамилия</h4>
-			<p class="d-flex justify-content-center">Пупкин</p>
+			<p class="d-flex justify-content-center">{{ user.last_name }}</p>
 		</div>
 	</div>
 </div>
@@ -43,33 +43,33 @@
 	<div class="row ">
 		<div class="col mt-3">
 			<div class="card" style="width: 15rem;">
-				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<img src="{% static 'user_profile/img/ fakel.svg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h4 style=" color: #4191ab;">Навание достижения</h4>
+					<h4 style=" color: #4191ab;">Вы прошли 1 курс</h4>
 				</div>
 			</div>
 		</div>
 		<div class="col mt-3">
 			<div class="card" style="width: 15rem;">
-				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<img src="{% static 'user_profile/img/ fakel.svg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h4 style=" color: #4191ab;">Навание достижения</h4>
+					<h4 style=" color: #4191ab;">Вы ответили на 100 вопросов</h4>
 				</div>
 			</div>
 		</div>
 		<div class="col mt-3">
 			<div class="card" style="width: 15rem;">
-				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<img src="{% static 'user_profile/img/ fakel.svg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h4 style=" color: #4191ab;">Навание достижения</h4>
+					<h4 style=" color: #4191ab;">Вы прошли 5 курсов</h4>
 				</div>
 			</div>
 		</div>
 		<div class="col mt-3">
 			<div class="card" style="width: 15rem;">
-				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<img src="{% static 'user_profile/img/ fakel.svg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h4 style=" color: #4191ab;">Навание достижения</h4>
+					<h4 style=" color: #4191ab;">Вы на нашем сайте 100 часов</h4>
 				</div>
 			</div>
 		</div>
@@ -90,6 +90,7 @@
 	<div class="row ">
 		<div class="col mt-3 d-flex justify-content-center">
 			<div class="card" style="width: 18rem;">
+                <img src="{% static 'pages/img/kul-sharif.jpg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Специальный заголовок</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -99,6 +100,7 @@
 		</div>
 		<div class="col mt-3 d-flex justify-content-center">
 			<div class="card" style="width: 18rem;">
+                <img src="{% static 'pages/img/kul-sharif.jpg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Специальный заголовок</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -108,6 +110,7 @@
 		</div>
 		<div class="col mt-3 d-flex justify-content-center">
 			<div class="card" style="width: 18rem;">
+                <img src="{% static 'pages/img/kul-sharif.jpg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Специальный заголовок</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -117,6 +120,7 @@
 		</div>
 		<div class="col mt-3 d-flex justify-content-center">
 			<div class="card" style="width: 18rem;">
+                <img src="{% static 'pages/img/kul-sharif.jpg' %}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">Специальный заголовок</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
