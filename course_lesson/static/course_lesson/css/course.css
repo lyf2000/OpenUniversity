@@ -20,7 +20,6 @@
 
 .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
 .show > .btn-outline-success.dropdown-toggle {
-
   color: #fff;
   background-color: #146985;
   border-color: #146985;
@@ -100,36 +99,36 @@
 /* Footer */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 section .section-title {
-    text-align: center;
-    color: #007b5e;
-    margin-bottom: 50px;
-    text-transform: uppercase;
+  text-align: center;
+  color: #007b5e;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
 #footer {
-    background: #71c2dc !important;
+  background: #71c2dc !important;
 }
 #footer h5{
   padding-left: 10px;
-    border-left: 3px solid #eeeeee;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
-    color:#ffffff;
+  border-left: 3px solid #eeeeee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color:#ffffff;
 }
 #footer a {
-    color: #ffffff;
-    text-decoration: none !important;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+  color: #ffffff;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
 }
 #footer ul.social li{
   padding: 3px 0;
 }
 #footer ul.social li a i {
-    margin-right: 5px;
+  margin-right: 5px;
   font-size:25px;
   -webkit-transition: .5s all ease;
   -moz-transition: .5s all ease;
@@ -161,7 +160,7 @@ section .section-title {
   margin-right: 5px;
 }
 #footer ul.quick-links li:hover a i {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .margin_for_banner{
@@ -177,4 +176,40 @@ section .section-title {
 .otziv {
   float: right;
 }
+
+.jumbotron-fluid {
+  color: #ffffff;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  margin-top: 55px;
+  border-radius: 0;
+  background-image: url("https://img3.goodfon.ru/wallpaper/nbig/c/66/budapest-budapesht-hungary-1525.jpg");
+  background-size: cover;
+}
+
+
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap h1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.urod {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
+
+
+
 

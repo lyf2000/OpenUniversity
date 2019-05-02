@@ -10,29 +10,61 @@ class Teacher(models.Model):
 	photo_link = models.CharField(max_length=200)
 	information = models.CharField(max_length=500)
 
+	def __str__(self):
+		return f'{self.first_name}'
+
 
 class Course(models.Model):
-	name = models.CharField(max_length=200)	
+	queue_number = models.PositiveSmallIntegerField(default=0)
+
+	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=800)
-#нагрузка???
+	complexity = models.PositiveSmallIntegerField(default=0)
 	language = models.CharField(max_length=50)
 	video_link = models.CharField(max_length=200)
 
+	def __str__(self):
+		return f'{self.name}'
+
 
 class Module(models.Model):
-	name = models.CharField(max_length=200)	
-	course = models.ForeignKey(Course, on_delete=models.CASCADE)
+	queue_number = models.PositiveSmallIntegerField(default=0)
+
+	name = models.CharField(max_length=200)
+	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
+
+	def __str__(self):
+		return f'{self.name} module from {self.course.name}'
 
 
 class Lesson(models.Model):
+	queue_number = models.PositiveSmallIntegerField(default=0)
+
 	name = models.CharField(max_length=150)
 	video_link = models.CharField(max_length=200)
 	description = models.CharField(max_length=500)
-	module = models.ForeignKey(Module, on_delete=models.CASCADE)
-	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
+	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
+	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='lessons')
 
+
+	def change_video_link(self):
+		link = self.video_link
+		if '=' in link:
+			link = link[link.index('=')+1:]
+			head = 'https://www.youtube.com/embed/'
+			self.video_link = head + link
+			self.save()
+
+	def __str__(self):
+		return f'{self.name} lesson from {self.module.name} module'
 
 class Resource(models.Model):
+
+
 	name = models.CharField(max_length=150)
 	resource_link = models.CharField(max_length=250)
-	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='resources')
+
+	def __str__(self):
+		return f'{self.name} resource'
+
