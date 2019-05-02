@@ -3,14 +3,32 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.template.context_processors import csrf
-
+from .forms import *
 
 # Create your views here.
 
 
 def sign_in(request):
-    return render(request, 'signin_signup/sign_in.html')
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("user_profile:profile"))
 
+    content = {}
+    content.update(csrf(request))
+    form = LoginForm(request.POST or None)
+    content['form'] = form
+    if form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = auth.authenticate(username=username, password=password)
+        if user:
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse("user_profile:profile"))
+        else:
+            error_message = "Такого пользователя нет"
+            content['error_message'] = error_message
+            return render(request, 'signin_signup/sign_in.html', content)
+
+    return render(request, 'signin_signup/sign_in.html', content)
 
 def sign_up(request):
     args = {}
@@ -27,6 +45,7 @@ def sign_up(request):
             args['error'] = 'Форма не валидна'
 
     return render(request, 'signin_signup/sign_up.html', args)
+
 
 def logout(request):
     auth.logout(request)
