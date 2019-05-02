@@ -13,9 +13,25 @@ def sign_in(request):
 
 
 def sign_up(request):
-    pass
 
+    args = {}
+    args.update(csrf(request))
+    args['form'] = RegistrationForm()
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            print("ФОРМА ВАЛИДНА")
+            form.save()
+            return HttpResponseRedirect(reverse('signin_signup:sign_in'))
+        else:
+            args['form'] = form
+            args['error'] = 'Форма не валидна'
 
+    return render(request, 'signin_signup/sign_up.html', args)
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect(reverse("pages:index"))
 
 # def login1(request):
 # 	if request.user.is_authenticated:
