@@ -24,9 +24,9 @@ class Answer(models.Model):
 
 
 class MyTest(models.Model):
-	test = models.ForeignKey('Test', on_delete=models.CASCADE, related_name='mytest_test')
+	test = models.ForeignKey('Test', on_delete=models.CASCADE, related_name='mytest_test', null=True)
 	date = models.DateTimeField(default = timezone.now)
-	modul = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='mytest_user')
+	module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='mytest_user')
 
 
 class QuestionResult(models.Model):
