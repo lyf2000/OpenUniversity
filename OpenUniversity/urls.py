@@ -21,7 +21,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('course_lesson.urls', namespace='course_lesson')),
-    path('course/<int:course_id>/module/<int:module_id>/', include('ttest.urls', namespace='ttest')),
+    path('course/<int:course_queue>/module/<int:module_queue>/', include('ttest.urls', namespace='ttest')),
     path('', include('signin_signup.urls', namespace='signin_signup')),
     path('', include('pages.urls', namespace='pages')),
     path('', include('user_profile.urls', namespace='user_profile')),
