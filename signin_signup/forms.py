@@ -1,5 +1,4 @@
 from django import forms
-
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
@@ -77,6 +76,7 @@ class RegistrationForm(UserCreationForm):
 
 
 
+
 class LoginForm (forms.Form):
     username = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={ 'class':"form-control", 'id':"inputEmail" ,'placeholder':"E-mail"}))
     password = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={'type':"password", 'name':"password", 'class':"form-control", 'id':"inputPassword", 'placeholder':"Password"}))
@@ -98,5 +98,3 @@ class LoginForm (forms.Form):
                 raise forms.ValidationError("Пользователя с таким емаилом не существует")
 
         return username
-
-

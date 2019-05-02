@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
     <link href="{% static 'course_lesson/css/lesson.css' %}" type="text/css" rel="stylesheet">
@@ -19,22 +20,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <iframe width="560" height="315" src="{{ lesson.video_link }}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+
+            <img src="{% static 'course_lesson/img/tatpo.jpg' %}" class="img-fluid" alt="Видео">
 
         </div>
         <div class="col-md-4">
             <div class="card">
                 <div style="background-color:#a3f1f7" class="card-body">
-                    <h4 class="card-title">{{ module.name }}</h4>
-                    <h5 class="card-title">Программа модуля</h5>
-                    {% for lesson_from_module in lessons_from_module %}
-                        <p class="card-text">
-                            <a href="{% url 'course_lesson:lesson' lesson_from_module.module.course.queue_number lesson_from_module.module.queue_number  lesson_from_module.queue_number%}">{{ lesson_from_module.name }}</a>
-                        </p>
-                    {% endfor %}
-                    <a href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number %}" class="btn btn-primary">Тест</a>
+                    <h4 class="card-title">Название модуля</h4>
+                    <h5 class="card-title">(программа модуля)</h5>
+                    <p class="card-text">1.Начало</p>
+                    <p class="card-text">2.Почти</p>
+                    <p class="card-text">3.Кульминация</p>
+                    <p class="card-text">4.Концовка</p>
+                    <a href="#" class="btn btn-primary">Тест</a>
                 </div>
             </div>
         </div>
@@ -49,7 +48,8 @@
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-                <p>{{ lesson.description }}</p>
+                <p>Данный урок является итоговым, на котором применяются и оцениваются знания и умения, полученные
+                    ранее, степень владения учебным материалом и понимание</p>
             </blockquote>
         </div>
     </div>
@@ -67,10 +67,8 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="card-title">{{ lesson.teacher.first_name }} {{ lesson.teacher.last_name }}</h4>
-                        {#                        КРАТКОЕ ОПИСАНИЕ ПРЕПОДАААА!!!!#}
-                        <p class="card-text">{{ lesson.teacher.information }}</p>
-                        {#                        NOT ACTIVE#}
+                        <h4 class="card-title">Преподователь</h4>
+                        <p class="card-text">Препод КФУ</p>
                         <a href="#" class="btn btn-primary">Больше про препода</a>
                     </div>
                 </div>
@@ -82,29 +80,42 @@
 <div class="container mt-5">
     <div class="col-md-12">
         <div class="card-deck">
-            {% for resource in resources %}
-                <div class="card">
-                    <img src="{% static 'course_lesson/img/wiki.png' %}" class="card-img-top" alt="wiki">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ resource.name }}</h5>
-                    </div>
+            <div class="card">
+                <img src="{% static 'course_lesson/img/wiki.png' %}" class="card-img-top" alt="wiki">
+                <div class="card-body">
+                    <h5 class="card-title">Википедия</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
                 </div>
-            {% endfor %}
 
+
+            </div>
+            <div class="card">
+                <img src="{% static 'course_lesson/img/boy.png' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Название карточки</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+
+
+            </div>
+            <div class="card">
+                <img src={% static 'course_lesson/img/tatpo.jpg' %} class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Название карточки</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal height
+                        action.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 
 <div class="container mt-5">
-    {% if next_lesson %}
-        <a href="{% url 'course_lesson:lesson' lesson.module.course.queue_number lesson.module.queue_number next_lesson.queue_number %}"
-           class="btn btn-primary btn-lg btn-block">Следующее видео</a>
-    {% else %}
-        <a href="{% url 'test:test' lesson.module.course.queue_number lesson.module.queue_number%}"
-           class="btn btn-primary btn-lg btn-block mb-5">Го тест</a>
-
-    {% endif %}
+    <button type="button" class="btn btn-primary btn-lg btn-block">Следующее видео</button>
 </div>
 {% include 'includes/footer.html' %}
 </body>

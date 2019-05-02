@@ -4,64 +4,35 @@ from django.db import models
 # Create your models here.
 
 class Teacher(models.Model):
-    first_name = models.CharField(max_length=40)
-    last_name = models.CharField(max_length=40)
-    patronymic = models.CharField(max_length=40)
-    image = models.ImageField(upload_to='course_lesson/teachers', blank=True, null=True)
-    information = models.CharField(max_length=500)
-
-    def __str__(self):
-        return f'{self.first_name}'
+	first_name = models.CharField(max_length=40)
+	last_name = models.CharField(max_length=40)
+	patronymic = models.CharField(max_length=40)
+	photo_link = models.CharField(max_length=200)
+	information = models.CharField(max_length=500)
 
 
 class Course(models.Model):
-    queue_number = models.PositiveSmallIntegerField(default=0)
-
-    name = models.CharField(max_length=200)
-    description = models.CharField(max_length=800)
-    complexity = models.PositiveSmallIntegerField(default=0)
-    language = models.CharField(max_length=50)
-    video_link = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f'{self.name}'
+	name = models.CharField(max_length=200)	
+	description = models.CharField(max_length=800)
+#нагрузка???
+	language = models.CharField(max_length=50)
+	video_link = models.CharField(max_length=200)
 
 
 class Module(models.Model):
-    queue_number = models.PositiveSmallIntegerField(default=0)
-
-    name = models.CharField(max_length=200)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
-
-    def __str__(self):
-        return f'{self.name} module from {self.course.name}'
+	name = models.CharField(max_length=200)	
+	course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
 
 class Lesson(models.Model):
-    queue_number = models.PositiveSmallIntegerField(default=0)
-
-    name = models.CharField(max_length=150)
-    video_link = models.CharField(max_length=200)
-    description = models.CharField(max_length=500)
-    module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
-    teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, related_name='lessons')
-
-    def change_video_link(self):
-        link = self.video_link
-        if '=' in link:
-            link = link[link.index('=') + 1:]
-            head = 'https://www.youtube.com/embed/'
-            self.video_link = head + link
-            self.save()
-
-    def __str__(self):
-        return f'{self.name} lesson from {self.module.name} module'
+	name = models.CharField(max_length=150)
+	video_link = models.CharField(max_length=200)
+	description = models.CharField(max_length=500)
+	module = models.ForeignKey(Module, on_delete=models.CASCADE)
+	teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
 
 
 class Resource(models.Model):
-    name = models.CharField(max_length=150)
-    resource_link = models.CharField(max_length=250)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='resources')
-
-    def __str__(self):
-        return f'{self.name} resource'
+	name = models.CharField(max_length=150)
+	resource_link = models.CharField(max_length=250)
+	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
