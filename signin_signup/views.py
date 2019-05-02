@@ -38,8 +38,13 @@ def sign_up(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
+            print("ФОРМА ВАЛИДНА")
             form.save()
-            return HttpResponseRedirect(reverse('succes_signup'))
+            return HttpResponseRedirect(reverse('signin_signup:sign_in'))
+        else:
+            args['form'] = form
+            args['error'] = 'Форма не валидна'
+
     return render(request, 'signin_signup/sign_up.html', args)
 
 def logout(request):

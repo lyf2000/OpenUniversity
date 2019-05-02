@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.validators import validate_email
+
 
 class LoginForm (forms.Form):
     username = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs={ 'class':"form-control", 'id':"inputEmail" ,'placeholder':"E-mail"}))
@@ -25,7 +27,7 @@ class LoginForm (forms.Form):
         return username
 
 class RegistrationForm(UserCreationForm):
-    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваш username"}))
+    username = forms.CharField(required=True,widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваш никнейм"}))
     email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваш email"}))
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите ваше имя"}))
     last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder':"Введите фамилию"}))
@@ -48,6 +50,7 @@ class RegistrationForm(UserCreationForm):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
+        user.username = self.cleaned_data['email']
 
         if commit:
             user.save()
@@ -60,9 +63,36 @@ class RegistrationForm(UserCreationForm):
             if password1 == password2:
                 if len(password2)<8:
                     raise forms.ValidationError('Пароль должен содержать минимум 8 символов')
-                elif password2.isdigit()
+                elif password2.isdigit():
+                    raise forms.ValidationError('Пароль не должен состоять только из цифр')
                 else :
                     return password2
-
-
         raise forms.ValidationError('Пароли не совпадают')
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+
+        try:
+            mt = validate_email(email)
+            try:
+                user = User.objects.filter(email=email)
+                if (len(user)!=0):
+                    raise forms.ValidationError('Пользователь с таким emailом существует')
+            except User.DoesNotExist:
+                return email
+        except:
+            raise forms.ValidationError('E-mail введен не корректно')
+
+        return email
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+
+        try:
+            user = User.objects.filter(username=username)
+            if (len(user) != 0):
+                raise forms.ValidationError('Пользователь с таким никнеймом существует')
+        except User.DoesNotExist:
+            return username
+        return username
+
