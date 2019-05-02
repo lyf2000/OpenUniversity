@@ -9,19 +9,140 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
     <link href="{% static 'user_profile/css/profile.css' %}" type="text/css" rel="stylesheet">
     <link href="{% static 'css/includes/footer.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/includes/header.css' %}" type="text/css" rel="stylesheet">
 
 
     <title>Профиль</title>
 </head>
 <body style="background-color:white">
 {% include 'includes/header.html' %}
-<div class="mt-5"><h1>Профиль </h1></div>
-<div class="mt-5"><h4><strong>Имя: </strong> {{ user.first_name }} </h4></div>
-<div class="mt-5"><h4><strong>Фамилия: </strong> {{ user.last_name }} </h4></div>
-<div class="mt-5"><h4><strong>E-mail: </strong> {{ user.email }} </h4></div>
-<div class="mt-5"><h4><strong>Username: </strong> {{ user.username }} </h4></div>
-<div class="mt-5"><h4><a href="{% url 'signin_signup:logout' %}">Выйти</a></h4></div>
 
+<div class="container mb-5">
+	<div class="" style="margin-top: 200px">
+		<h1 class="">Username</h1>
+	</div>
+	<div class="row ">
+		<div class="col">
+			<img class="" src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" width="100" height="100">
+		</div>
+		<div class="col">
+			<h4 class="d-flex justify-content-center">Имя</h4>
+			<p class="d-flex justify-content-center">Вася</p>
+		</div>
+		<div class="col">
+			<h4 class="d-flex justify-content-center">Фамилия</h4>
+			<p class="d-flex justify-content-center">Пупкин</p>
+		</div>
+	</div>
+</div>
+
+<div class="container" style="margin-top: 50px; color: #4191ab;">
+	<h1 class="d-flex justify-content-center">Мои достижения</h1>
+</div>
+<div class="container mb-5 d-flex justify-content-center">
+	<div class="row ">
+		<div class="col mt-3">
+			<div class="card" style="width: 15rem;">
+				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h4 style=" color: #4191ab;">Навание достижения</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3">
+			<div class="card" style="width: 15rem;">
+				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h4 style=" color: #4191ab;">Навание достижения</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3">
+			<div class="card" style="width: 15rem;">
+				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h4 style=" color: #4191ab;">Навание достижения</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3">
+			<div class="card" style="width: 15rem;">
+				<img src="{% static 'user_profile/img/luca-zanon-X0OoHrPvgXE.jpg' %}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h4 style=" color: #4191ab;">Навание достижения</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<button type="button" class="shadow btn btn-primary container btn-lg mb-5 d-flex justify-content-center" style="width:300px;height:50px">Все достижения</button>
+</div>
+
+
+<div class="container" style="margin-top: 100px; color: #4191ab;">
+	<h1 class="d-flex justify-content-center">Мои курсы</h1>
+</div>
+
+<div class="container mb-5">
+	<div class="row ">
+		<div class="col mt-3 d-flex justify-content-center">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Специальный заголовок</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3 d-flex justify-content-center">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Специальный заголовок</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3 d-flex justify-content-center">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Специальный заголовок</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3 d-flex justify-content-center">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Специальный заголовок</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+				</div>
+			</div>
+		</div>
+		<div class="col mt-3 d-flex justify-content-center">
+
+		</div>
+		<div class="col mt-3 d-flex justify-content-center">
+
+		</div>
+	</div>
+</div>
+
+
+<div class="container" style="margin-top: 100px; margin-bottom: 100px;">
+	<div class="" style="color: #4191ab;">
+		<h3>Общий прогресс</h3>
+	</div>
+	<div class="progress">
+		<div class="progress-bar d-flex justify-content-center" role="progressbar" style="width: 25%; background-color: #71c2dc;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+	</div>
+
+</div>
 
 
 {% include 'includes/footer.html' %}

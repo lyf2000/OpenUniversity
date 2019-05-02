@@ -1,4 +1,5 @@
 from django import forms
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import validate_email
@@ -95,4 +96,5 @@ class RegistrationForm(UserCreationForm):
         except User.DoesNotExist:
             return username
         return username
+
 
