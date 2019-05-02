@@ -13,9 +13,7 @@ def sign_in(request):
 
 
 def sign_up(request):
-    pass
-
-
+    return render(request, 'signin_signup/sign_up.html')
 
 # def login1(request):
 # 	if request.user.is_authenticated:
