@@ -10,7 +10,4 @@ urlpatterns = [
 ]
 
 
-# urlpatterns = [
-#     path('', views.test),
-#     path('result/', views.test_result)
-# ]
+

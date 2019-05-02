@@ -4,10 +4,10 @@ from django.shortcuts import render
 
 
 def test(request, course_id, module_id):
-    pass
+    return render(request, 'ttest/test.html')
 
 def test_result(request, course_id, module_id):
-    pass
+    return render(request, 'ttest/test_result.html')
 
 # def test(request):
 #     return render(request, 'ttest/tests.html')

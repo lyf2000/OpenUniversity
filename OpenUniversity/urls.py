@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#dadasdasds
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,9 +28,3 @@ urlpatterns = [
     
 ]
 
-
-#urlpatterns = [
-#    path('admin/', admin.site.urls),
-#    path('', include('signin_signup.urls')),
-#    path('test/', include('ttest.urls')),
-#]

@@ -20,6 +20,7 @@
 
 .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
 .show > .btn-outline-success.dropdown-toggle {
+
   color: #fff;
   background-color: #146985;
   border-color: #146985;
@@ -176,9 +177,4 @@ section .section-title {
 .otziv {
   float: right;
 }
-
-
-
-
-
 
