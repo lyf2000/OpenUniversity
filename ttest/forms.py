@@ -7,15 +7,22 @@ class TestForm(forms.Form):
                                   choices={(12, 'yse')}, widget=forms.RadioSelect)
     def __init__(self, questions):
         self.questions = questions
-        # for question in questions:
-        #     for answer in Answer.objects.filter(question=question):
-        #         self.choises.append((answer.pk, answer.answer_text))
+        return super(TestForm, self).__init__()
 
-        # field = forms.ChoiceField(label=question.question_text, required=True,
-        #                               choices=self.choises, widget=forms.RadioSelect)
-    for question in questions:
+    def method(self):
+     for question in self.questions:
         choises = []
         for answer in Answer.objects.filter(question=question):
             choises.append((answer.pk, answer.answer_text))
         field = forms.ChoiceField(label=question.question_text, required=True,
                                       choices=choises, widget=forms.RadioSelect)
+
+
+    # for question in questions:
+    #     choises = []
+    #     for answer in Answer.objects.filter(question=question):
+    #         choises.append((answer.pk, answer.answer_text))
+    #     field = forms.ChoiceField(label=question.question_text, required=True,
+    #                                   choices=choises, widget=forms.RadioSelect)
+        print("hello world")
+        print("hello world")

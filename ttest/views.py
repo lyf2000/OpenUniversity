@@ -21,6 +21,7 @@ def test(request, course_queue, module_queue):
     testform = TestForm(questions=questions)
     print("TestForm", testform)
     print("hello")
+    testform.method()
     return render(request, 'ttest/test.html', {"form": testform})
 
 def test_result(request, course_queue, module_queue):
